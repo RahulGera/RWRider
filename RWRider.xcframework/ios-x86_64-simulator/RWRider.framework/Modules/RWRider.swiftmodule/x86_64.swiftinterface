@@ -1,0 +1,54 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 effective-4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name RWRider
+import Appirater
+import Branch
+import CoreSpotlight
+import Firebase
+import FirebaseCrashlytics
+import Foundation
+import GoogleMaps
+import GooglePlaces
+import Pulley
+@_exported import RWRider
+import RxCocoa
+import RxSwift
+import SDWebImage
+import Swift
+import UIKit.UIFont
+import UIKit
+import URITemplate
+import UserNotificationsUI
+import WebKit
+public protocol Identifiable {
+  static var identifier: Swift.String { get }
+}
+extension Identifiable {
+  public static var identifier: Swift.String {
+    get
+  }
+}
+extension UIViewController : RWRider.Identifiable {
+}
+extension UITableViewCell : RWRider.Identifiable {
+}
+extension UITableViewHeaderFooterView : RWRider.Identifiable {
+}
+extension UITableView {
+  public func register(_ cellClass: UIKit.UITableViewCell.Type)
+  public func register(_ cellClass: UIKit.UITableViewHeaderFooterView.Type)
+  public func registerNib(_ cellClass: UIKit.UITableViewCell.Type)
+  public func registerNib(_ cellClass: UIKit.UITableViewHeaderFooterView.Type)
+  public func dequeue<T>(_ cellClass: T.Type, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UITableViewCell
+  public func dequeue<T>(_ cellClass: T.Type) -> T where T : UIKit.UITableViewHeaderFooterView
+}
+extension UICollectionViewCell : RWRider.Identifiable {
+}
+extension UICollectionView {
+  public func register(_ cellClass: UIKit.UICollectionViewCell.Type)
+  public func registerNib(_ cellClass: UIKit.UICollectionViewCell.Type)
+  public func dequeue<T>(_ cellClass: T.Type, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionViewCell
+}
+extension String {
+  public func isOnlyNumber() -> Swift.Bool
+}
