@@ -6,9 +6,9 @@
 //  Copyright © 2017 RideAustin.com. All rights reserved.
 //
 
-#import <OHHTTPStubs/OHHTTPStubs.h>
+#import "OHHTTPStubs/HTTPStubs.h"
 
-@interface OHHTTPStubs (Factory)
+@interface HTTPStubs (Factory)
 + (void)addStubWithRequestPath:(NSString * _Nonnull)path
                         method:(NSString * _Nonnull)httpMethod
                     statusCode:(int)statusCode

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RWRider/RWRider-Swift.h"
 
 @interface NSDictionary (JSON)
 
