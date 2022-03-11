@@ -1,0 +1,81 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RWRider
+import Appirater
+import Branch
+import CoreSpotlight
+import CoreTelephony
+import FirebaseCrashlytics
+import Foundation
+import GoogleMaps
+import GooglePlaces
+import Pulley
+@_exported import RWRider
+import RxCocoa
+import RxSwift
+import SDWebImage
+import Swift
+import UIKit.UIFont
+import UIKit
+import URITemplate
+import UserNotificationsUI
+import WebKit
+import _Concurrency
+public protocol Identifiable {
+  static var identifier: Swift.String { get }
+}
+extension RWRider.Identifiable {
+  public static var identifier: Swift.String {
+    get
+  }
+}
+extension UIKit.UIViewController : RWRider.Identifiable {
+}
+extension UIKit.UITableViewCell : RWRider.Identifiable {
+}
+extension UIKit.UITableViewHeaderFooterView : RWRider.Identifiable {
+}
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func register(_ cellClass: UIKit.UITableViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func register(_ cellClass: UIKit.UITableViewHeaderFooterView.Type)
+  @_Concurrency.MainActor(unsafe) public func registerNib(_ cellClass: UIKit.UITableViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerNib(_ cellClass: UIKit.UITableViewHeaderFooterView.Type)
+  @_Concurrency.MainActor(unsafe) public func dequeue<T>(_ cellClass: T.Type, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) public func dequeue<T>(_ cellClass: T.Type) -> T where T : UIKit.UITableViewHeaderFooterView
+}
+extension UIKit.UICollectionViewCell : RWRider.Identifiable {
+}
+extension UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) public func register(_ cellClass: UIKit.UICollectionViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerNib(_ cellClass: UIKit.UICollectionViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func dequeue<T>(_ cellClass: T.Type, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionViewCell
+}
+extension Swift.String {
+  public func isOnlyNumber() -> Swift.Bool
+}
+@objc public protocol MRCountryPickerDelegate {
+  @objc func countryPhoneCodePicker(_ picker: RWRider.MRCountryPicker, didSelectCountryWithName name: Swift.String, countryCode: Swift.String, phoneCode: Swift.String, flag: UIKit.UIImage)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) open class MRCountryPicker : UIKit.UIPickerView, UIKit.UIPickerViewDelegate, UIKit.UIPickerViewDataSource {
+  @_Concurrency.MainActor(unsafe) open var selectedLocale: Foundation.Locale?
+  @objc @_Concurrency.MainActor(unsafe) weak open var countryPickerDelegate: RWRider.MRCountryPickerDelegate?
+  @_Concurrency.MainActor(unsafe) open var showPhoneNumbers: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func setLocale(_ locale: Swift.String)
+  @objc @_Concurrency.MainActor(unsafe) open func setCountry(_ code: Swift.String)
+  @objc @_Concurrency.MainActor(unsafe) open func setCountryByPhoneCode(_ phoneCode: Swift.String)
+  @_Concurrency.MainActor(unsafe) open func setCountryByName(_ name: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc open func numberOfComponents(in pickerView: UIKit.UIPickerView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc open func pickerView(_ pickerView: UIKit.UIPickerView, numberOfRowsInComponent component: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc open func pickerView(_ pickerView: UIKit.UIPickerView, viewForRow row: Swift.Int, forComponent component: Swift.Int, reusing view: UIKit.UIView?) -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) @objc open func pickerView(_ pickerView: UIKit.UIPickerView, didSelectRow row: Swift.Int, inComponent component: Swift.Int)
+  @objc deinit
+}
+extension UIKit.UIFont {
+  public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
+}
+@_hasMissingDesignatedInitializers open class RWRiderWrapper {
+  public static var sharedInstance: RWRider.RWRiderWrapper
+  public func initialize(window: UIKit.UIWindow)
+  @objc deinit
+}
